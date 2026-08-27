@@ -13,6 +13,6 @@
 - [ ] Weryfikacja manualna (jeśli dotyczy)
 
 ## Zgodność ze Standardami
-- [ ] Zmiany przestrzegają zasad architektury i czystości root (`devex-standards`)
+- [ ] Zmiany są zgodne z wytycznymi w `.agents/rules/project.md`
 - [ ] Zastosowano konwencję Conventional Commits
 - [ ] Brak porzuconych plików tymczasowych (`*.bak`, `*.tmp`, `fix_*.py`)
