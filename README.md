@@ -12,10 +12,10 @@ Repozytorium stanowi centralny punkt odniesienia (**Konstytucję**) dla całego 
 
 W ekosystemie obowiązują dokładnie **dwa deterministyczne modele projektowe** (reprezentowane przez dedykowane szablony):
 
-| Model | Punkt wejścia kodu | Przeznaczenie |
-| :--- | :--- | :--- |
-| **Single-App** | `src/` | Pojedyncze aplikacje, gry, biblioteki i narzędzia jednozadaniowe. |
-| **Monorepo** | `apps/` + `packages/` | Wielomodułowe platformy (`pnpm workspaces`, `Turborepo`, multi-target). |
+| Model | Punkt wejścia kodu | Oficjalny Szablon Repo | Przeznaczenie |
+| :--- | :--- | :--- | :--- |
+| **Single-App** | `src/` | `template-single-app` | Pojedyncze aplikacje, gry, biblioteki i narzędzia jednozadaniowe. |
+| **Monorepo** | `apps/` + `packages/` | `template-monorepo` | Wielomodułowe platformy (`pnpm workspaces`, `Turborepo`, multi-target). |
 
 ---
 
