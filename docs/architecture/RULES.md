@@ -68,3 +68,22 @@ Każdy plik dokumentacyjny (`.md`) w całym ekosystemie **musi rozpoczynać się
 3. **Ścieżki relatywne:** Każdy człon ścieżki musi być aktywnym, klikalnym linkiem względnym prowadzącym do odpowiedniego pliku `README.md` lub nadrzędnego węzła.
 4. **Ostatni element:** Ostatni człon w ścieżce to nazwa bieżącego dokumentu (linkująca do siebie lub reprezentująca aktywny plik).
 5. **Linia oddzielająca:** Pod paskiem nawigacyjnym zawsze musi znajdować się pusta linia, separator `---` oraz kolejna pusta linia przed głównym nagłówkiem `# H1`.
+
+## 6. Higiena Repozytorium i Zakaz Śmieci (No Scratch Leftovers)
+Repozytorium musi pozostawać czyste w każdym commicie:
+- **Zakaz porzucania skryptów jednorazowych:** Wszelkie pomocnicze skrypty debugujące, testowe zrzuty czy skrypty patchy (`patch_*.py`, `fix_*.py`, `temp_*.ts`) muszą zostać bezwzględnie usunięte po zakończeniu prac. Jeśli skrypt ma trwałą wartość narzędziową, jego miejsce jest w `scripts/` (lub `tests/`).
+- **Zakaz plików backupowych:** Pliki typu `*.bak`, `*.old`, `*.tmp`, `*.orig` nie mogą być commitowane do repozytorium.
+
+## 7. Bezpieczeństwo Sekretów i Danych Autoryzacyjnych
+- **Brak poświadczeń w Git:** Zakazuje się commitowania jakichkolwiek kluczy prywatnych, tokenów sesyjnych (`token.json`), plików poświadczeń (`credentials.json`) czy haseł.
+- **Wymóg `.env.example`:** Każdy projekt korzystający ze zmiennych środowiskowych ma obowiązek utrzymywać plik `.env.example` jako bezpieczny szablon bez wartości wrażliwych.
+
+## 8. Konwencja Nazewnictwa i Językowa (Kebab-Case & English for Infra)
+- **Struktura techniczna:** Wszystkie katalogi, pliki kodu źródłowego, skrypty i konfiguracje muszą być nazwane w języku angielskim w formacie `kebab-case` (np. `sim-reports/`, `balance-notes/`, `test-runner.sh`).
+- **Język polski:** Dopuszczalny jest wyłącznie w treści merytorycznej dokumentacji Markdown, lore gier oraz specyficznych nazwach encji biznesowych.
+
+## 9. Standard Archiwizacji (Archive Policy)
+- **Zakaz `archiwum/` w root:** Tworzenie folderów archiwalnych w katalogu głównym jest zabronione.
+- **Archiwizacja dokumentacji:** Nieaktualne pliki dokumentacyjne trafiają do `docs/archive/`.
+- **Archiwizacja danych:** Stare zrzuty danych trafiają do `data/archive/`.
+- **Kod źródłowy:** Kodu źródłowego nie archiwizuje się w folderach — historię zmian przechowuje Git.

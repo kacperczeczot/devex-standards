@@ -30,3 +30,12 @@ Podczas tworzenia lub modyfikacji jakichkolwiek plików `.md` w całym ekosystem
 ```
 - Zakaz pomijania breadcrumbs w jakimkolwiek pliku Markdown.
 - Zawsze format `[Strona główna](...)` (mała litera "główna") z separatorem ` > ` i linią `---`.
+
+## 5. Higiena Kodu i Zakaz Pozostawiania Śmieci
+- **Usuwanie plików tymczasowych:** Po zakończeniu zadania AI ma bezwzględny obowiązek usunąć wszelkie utworzone przez siebie skrypty debugujące (`fix_*.py`, `patch_*.py`, `temp_*.ts`) oraz pliki tymczasowe.
+- **Bezpieczeństwo danych:** AI ma kategoryczny zakaz tworzenia i commitowania plików z twardo zapisanymi sekretami, kluczami i tokenami.
+- **Format commitów:** AI musi tworzyć wiadomości commitów ściśle według formatu Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`).
+
+## 6. Konwencja Nazewnictwa i Językowa
+- Wszystkie nowo tworzone katalogi, pliki skryptów i konfiguracje muszą być nazwane w języku angielskim w formacie `kebab-case`.
+- Zabrania się tworzenia folderów takich jak `archiwum/` czy `nowe_pliki/` w root — archiwizacja odbywa się w `docs/archive/` lub `data/archive/`.

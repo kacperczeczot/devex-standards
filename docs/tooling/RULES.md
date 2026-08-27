@@ -22,3 +22,12 @@ Nie budujemy własnych, skomplikowanych skryptów bashowych do weryfikacji.
 
 - **Zasada "Golden Path":** Opieramy się na prostych, uniwersalnych i czytelnych plikach `.github/workflows/ci.yml`.
 - **Minimum weryfikacyjne:** Każde repozytorium w ramach Pull Requestu musi automatycznie pomyślnie przejść instalację paczek, weryfikację typów, linter oraz testy jednostkowe za pomocą standardowych akcji GitHuba.
+
+## 4. Standard Wiadomości Commitów (Conventional Commits)
+Wszystkie commity w całym ekosystemie muszą stosować ustandaryzowane prefiksy:
+- `feat:` — nowa funkcjonalność, mechanika, moduł
+- `fix:` — naprawa błędu logicznego, typowania lub błędu w UI
+- `docs:` — zmiany w dokumentacji Markdown, diagramach, komentarzach
+- `refactor:` — przebudowa struktury kodu bez zmiany jego zachowania zewnętrznego
+- `test:` — dodanie, poprawa lub rozbudowa testów
+- `chore:` — zmiany w konfiguracji narzędzi, zależnościach, pipeline CI
