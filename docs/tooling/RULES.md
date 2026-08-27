@@ -31,3 +31,30 @@ Wszystkie commity w całym ekosystemie muszą stosować ustandaryzowane prefiksy
 - `refactor:` — przebudowa struktury kodu bez zmiany jego zachowania zewnętrznego
 - `test:` — dodanie, poprawa lub rozbudowa testów
 - `chore:` — zmiany w konfiguracji narzędzi, zależnościach, pipeline CI
+
+## 5. Strategia Wersjonowania i Wydań (Semantic Versioning)
+Wszystkie pakiety, biblioteki i aplikacje w ekosystemie podlegają ścisłemu wersjonowaniu semantycznemu (**SemVer**):
+- **Format:** `MAJOR.MINOR.PATCH` (np. `1.2.3`).
+  - `MAJOR`: Zmiany niekompatybilne wstecz (breaking changes).
+  - `MINOR`: Nowe funkcjonalności kompatybilne wstecz.
+  - `PATCH`: Poprawki błędów kompatybilne wstecz.
+- **Tagowanie Git:** Każde wydanie produkcyjne musi posiadać tag w formacie `vX.Y.Z` (np. `v1.0.0`).
+- **Dziennik Zmian:** Każde oficjalne wydanie wymaga podsumowania w pliku `CHANGELOG.md` na podstawie commitów.
+
+## 6. Determinizm Zależności (Strict Lockfile Policy)
+- **Frozen Lockfile w CI:** Wszystkie zadania CI muszą bezwzględnie instalować zależności z flagą zamrażającą plik lock (`pnpm install --frozen-lockfile` lub odpowiednik).
+- **Zabezpieczenie Lockfile:** Pliki `pnpm-lock.yaml`, `Cargo.lock`, `poetry.lock` są obowiązkowo śledzone w Git.
+- **Wersje Środowiska:** Wersje środowisk wykonawczych (np. Node.js, kompilatory) muszą być zdefiniowane w plikach konfiguracyjnych (`.nvmrc`, `package.json engines`).
+
+## 7. Strategia Gałęzi i Szablony GitHub (Branching & PR Standards)
+- **Model Gałęzi:**
+  - `main` — gałąź główna, zawsze stabilna, chroniona przed bezpośrednim pushem.
+  - `feat/<nazwa>` — gałęzie dedykowane nowym funkcjonalnościom.
+  - `fix/<nazwa>` — gałęzie dedykowane poprawkom błędów.
+  - `chore/<nazwa>` — gałęzie prac konfiguracyjnych i toolingowych.
+- **Wymóg Szablonu PR:** Każdy Pull Request tworzony w repozytorium musi korzystać z ujednoliconego szablonu `.github/pull_request_template.md`.
+
+## 8. Standard Formatowania i Lintera (Code Style Baseline)
+- **Formatowanie:** Obowiązuje automatyczne formatowanie kodu przy użyciu Prettier / Biome w oparciu o reguły `.editorconfig`.
+- **Weryfikacja:** Kod przed commitem (Husky) oraz w ramach CI (GitHub Actions) musi bezwzględnie przejść weryfikację `lint` oraz `typecheck`.
+
