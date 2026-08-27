@@ -34,11 +34,15 @@ W ekosystemie obowiązują dwa wykluczające się modele struktury kodu:
 Szablony prezentują strukturę z kontrolowaną nadwyżką, w której każdy katalog posiada określony status:
 - 🔴 **`[WYMAGANY]`**: Musi istnieć w każdym projekcie danego modelu (np. `src/` w Single-App, `apps/` i `packages/schemas/` w Monorepo, `docs/adr/`, `.agents/`).
 - 🟡 **`[ZALECANY]`**: Powinien istnieć w projektach o umiarkowanej i dużej złożoności (np. `tests/e2e/`, `tests/integration/`, `docs/architecture/`, `packages/config/`).
-- ⚪ **`[OPCJONALNY]`**: Stosowany wyłącznie wtedy, gdy projekt tego realnie wymaga (np. `assets/` dla grafik/audio, `data/` dla SQLite/zrzutów, `docs/api/` dla kontraktów OpenAPI, `packages/ui/` dla design systemu).
+- ⚪ **`[OPCJONALNY]`**: Stosowany wyłącznie wtedy, gdy projekt tego realnie wymaga (np. `public/` dla statycznych zasobów webowych, `assets/` dla grafik/audio/PnP, `data/` dla SQLite/zrzutów, `docs/api/` dla kontraktów OpenAPI, `packages/ui/` dla design systemu).
 
 ### Konwencje Folderów Pomocniczych
 - **Automatyzacja (`scripts/` vs `tools/`):** Domyślnym folderem automatyzacji dla projektów webowych i skryptowych jest `scripts/`. Dla projektów natywnych (C++, Rust) oficjalny standard dopuszcza używanie `tools/` (np. na wewnętrzne kompilatory, narzędzia telemetryczne) jako alternatywy lub uzupełnienia dla `scripts/`.
-- **Zasoby statyczne (`assets/`):** Występują w root w modelu Single-App. W modelu Monorepo nie stosuje się folderu `assets/` w root — zasoby należą do poszczególnych aplikacji lub współdzielonych pakietów UI.
+- **Zasoby statyczne i webowe (`public/` vs `assets/`):**
+  - **`public/` (Web-Root Serving):** Dopuszczalny **wyłącznie w modelu Single-App** dla aplikacji webowych (Astro, Vite, Next.js). Zawiera pliki serwowane bezpośrednio pod ścieżką root (`robots.txt`, `favicon.ico`, `sitemap.xml`, panele CMS).
+  - **`assets/` (Project Media):** Występuje w modelu Single-App dla surowych plików graficznych, próbek audio, modeli 3D, szablonów do druku PnP gier.
+  - **Zakaz w Monorepo:** W korzeniu Monorepo obowiązuje bezwzględny **zakaz** tworzenia folderów `public/` oraz `assets/`. Wszelkie zasoby publiczne należą do poszczególnych aplikacji w `apps/<nazwa>/public/` lub modułów w `packages/`.
+
 
 ### Polityka Czystości Katalogu Root
 Katalog główny (`root`) każdego projektu musi bezwzględnie przestrzegać **zamkniętej listy dopuszczalnych folderów** zdefiniowanej w głównym `README.md`. Oprócz tego obowiązuje rygorystyczna polityka dotycząca plików w root:

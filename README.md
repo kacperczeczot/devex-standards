@@ -29,6 +29,7 @@ Katalog główny (`root`) każdego projektu podlega rygorystycznemu ograniczeniu
 | [apps/](docs/architecture/RULES.md#4-modele-projektowe-i-czystość-katalogu-głównego-root) | Monorepo | Aplikacje i moduły wykonawcze |
 | [packages/](docs/architecture/RULES.md#4-modele-projektowe-i-czystość-katalogu-głównego-root) | Monorepo | Współdzielone paczki i biblioteki |
 | [docs/](docs/README.md) | Uniwersalny | Dokumentacja projektowa, GDD, ADR-y |
+| [public/](docs/architecture/RULES.md#konwencje-folderów-pomocniczych) | Single-App (Web) | Statyczne zasoby webowe (robots.txt, favicon, CMS) |
 | [assets/](docs/architecture/RULES.md#konwencje-folderów-pomocniczych) | Single-App | Zasoby statyczne (grafiki, audio, modele, pliki PnP) |
 | [data/](docs/architecture/RULES.md#polityka-czystości-katalogu-root) | Uniwersalny | Lokalne bazy SQLite, zrzuty JSON, dane deweloperskie |
 | [scripts/](docs/architecture/RULES.md#konwencje-folderów-pomocniczych) | Uniwersalny | Lekka automatyzacja (Node.js, bash) |

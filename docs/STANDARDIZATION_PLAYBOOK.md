@@ -47,10 +47,9 @@ Przenieś pliki do odpowiednich kontenerów zgodnie z Kanonem Root:
 | **Kod Źródłowy (Single-App)** | `src/` | Zastosuj architekturę kolokacji domenowej (np. `src/auth/`, `src/sim/`). |
 | **Aplikacje (Monorepo)** | `apps/<nazwa>/` | Każda aplikacja otrzymuje własny podfolder (np. `apps/web/`, `apps/api/`). |
 | **Pakiety Współdzielone** | `packages/<nazwa>/` | Schematy Zod do `packages/schemas/`, konfiguracje do `packages/config/`. |
+| **Zasoby Webowe (Single-App)** | `public/` | Pliki serwowane verbatim przez frameworki webowe (robots.txt, favicon, CMS). |
+| **Multimedia i Binaria** | `assets/` | Grafiki źródłowe, audio, czcionki, modele 3D, pliki do druku PnP. |
 | **Bazy i Surowe Dane** | `data/` | Bazy SQLite, zrzuty JSON/CSV, cache. Pamiętaj o regułach `.gitignore`. |
-| **Skrypty Automatyzacji** | `scripts/` | Skrypty deploymentu, migracji, seedowania (w C++ alternatywnie `tools/`). |
-| **Testy Nielokalne** | `tests/` | Testy E2E do `tests/e2e/`, testy integracji do `tests/integration/`. |
-| **Multimedia i Binaria** | `assets/` | Grafiki, audio, czcionki, modele 3D, pliki do druku. |
 
 ---
 
