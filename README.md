@@ -46,8 +46,9 @@ Katalog główny (`root`) każdego projektu podlega rygorystycznemu ograniczeniu
 
 | Sekcja | Ścieżka | Opis |
 | :--- | :--- | :--- |
-| [Baza Dokumentacji](docs/README.md) | [docs/README.md](docs/README.md) | Centralny hub dokumentacyjny standardów |
-| [Architektura](docs/architecture/RULES.md) | [docs/architecture/RULES.md](docs/architecture/RULES.md) | Zod, Result Object, CSS Modules, czystość root |
-| [Narzędzia i CI](docs/tooling/RULES.md) | [docs/tooling/RULES.md](docs/tooling/RULES.md) | Stack narzędziowy (pnpm, Husky, CI) |
-| [Rejestr Decyzji (ADR)](docs/adr/README.md) | [docs/adr/README.md](docs/adr/README.md) | Format i zasady rejestrowania decyzji architektonicznych |
-| [Reguły AI](.agents/rules/universal.md) | [.agents/rules/universal.md](.agents/rules/universal.md) | Zasady Zero Samowolki i neutralności domenowej |
+| Baza Dokumentacji | [docs/README.md](docs/README.md) | Centralny hub dokumentacyjny standardów |
+| Architektura | [docs/architecture/RULES.md](docs/architecture/RULES.md) | Zod, Result Object, CSS Modules, czystość root |
+| Narzędzia i CI | [docs/tooling/RULES.md](docs/tooling/RULES.md) | Stack narzędziowy (pnpm, Husky, CI) |
+| Rejestr Decyzji (ADR) | [docs/adr/README.md](docs/adr/README.md) | Format i zasady rejestrowania decyzji architektonicznych |
+| Reguły AI | [.agents/rules/universal.md](.agents/rules/universal.md) | Zasady Zero Samowolki i neutralności domenowej |
+
