@@ -14,8 +14,8 @@ W ekosystemie obowiązują dokładnie **dwa deterministyczne modele projektowe**
 
 | Model | Punkt wejścia kodu | Oficjalny Szablon Repo | Przeznaczenie |
 | :--- | :--- | :--- | :--- |
-| **Single-App** | `src/` | [template-single-app](../template-single-app/README.md) | Pojedyncze aplikacje, gry, biblioteki i narzędzia jednozadaniowe. |
-| **Monorepo** | `apps/` + `packages/` | [template-monorepo](../template-monorepo/README.md) | Wielomodułowe platformy (`pnpm workspaces`, `Turborepo`, multi-target). |
+| **Single-App** | `src/` | [template-single-app](https://github.com/kacperczeczot/template-single-app) | Pojedyncze aplikacje, gry, biblioteki i narzędzia jednozadaniowe. |
+| **Monorepo** | `apps/` + `packages/` | [template-monorepo](https://github.com/kacperczeczot/template-monorepo) | Wielomodułowe platformy (`pnpm workspaces`, `Turborepo`, multi-target). |
 
 ---
 
