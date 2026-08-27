@@ -1,7 +1,3 @@
-[Strona główna](README.md)
-
----
-
 # Standardy Inżynierii i Architektury (DevEx)
 
 Repozytorium stanowi centralny punkt odniesienia (**Konstytucję**) dla całego naszego ekosystemu. Definiuje żelazne reguły architektoniczne, wytyczne dotyczące stacku narzędziowego oraz twarde instrukcje dla asystentów AI.
