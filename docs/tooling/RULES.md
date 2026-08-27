@@ -5,6 +5,19 @@
 
 Dokument ten określa obowiązujący zestaw narzędzi deweloperskich oraz zasady utrzymania jakości kodu w repozytoriach. 
 
+## 0. Oficjalne Standardy Zewnętrzne i Specyfikacje
+
+Wszystkie projekty w ekosystemie opierają się na powszechnie uznanych standardach branżowych:
+
+| Standard | Implementacja w Ekosystemie | Oficjalna Specyfikacja |
+| :--- | :--- | :--- |
+| **Conventional Commits** | Commitlint + Husky (język angielski w commitach) | [conventionalcommits.org](https://www.conventionalcommits.org/pl/v1.0.0/) |
+| **Semantic Versioning** | SemVer w manifestach (`package.json`, `Cargo.toml`) + tagi `vX.Y.Z` | [semver.org](https://semver.org/lang/pl/) |
+| **Keep a Changelog** | Ujednolicony format `CHANGELOG.md` (Added, Changed, Fixed itd.) | [keepachangelog.com](https://keepachangelog.com/pl/1.1.0/) |
+| **ADR** | Indeks w `docs/adr/` na podstawie wzorca `0000-*.md` | [adr.github.io](https://adr.github.io/) |
+| **EditorConfig** | Plik `.editorconfig` w root dla spójności IDE | [editorconfig.org](https://editorconfig.org/) |
+| **TSDoc / Doxygen** | Dokumentacja publicznych interfejsów i funkcji (`@param`, `@returns`) | [tsdoc.org](https://tsdoc.org/) |
+
 ## 1. Menedżer Pakietów - pnpm
 Globalnym standardem we wszystkich projektach opartych na ekosystemie JavaScript/Node.js jest **`pnpm`**.
 
@@ -32,14 +45,14 @@ Wszystkie commity w całym ekosystemie muszą stosować ustandaryzowane prefiksy
 - `test:` — dodanie, poprawa lub rozbudowa testów
 - `chore:` — zmiany w konfiguracji narzędzi, zależnościach, pipeline CI
 
-## 5. Strategia Wersjonowania i Wydań (Semantic Versioning)
-Wszystkie pakiety, biblioteki i aplikacje w ekosystemie podlegają ścisłemu wersjonowaniu semantycznemu (**SemVer**):
+## 5. Strategia Wersjonowania i Dziennik Zmian (SemVer & Keep a Changelog)
+Wszystkie pakiety, biblioteki i aplikacje w ekosystemie podlegają ścisłemu wersjonowaniu semantycznemu (**SemVer**) oraz standardowi **Keep a Changelog**:
 - **Format:** `MAJOR.MINOR.PATCH` (np. `1.2.3`).
   - `MAJOR`: Zmiany niekompatybilne wstecz (breaking changes).
   - `MINOR`: Nowe funkcjonalności kompatybilne wstecz.
   - `PATCH`: Poprawki błędów kompatybilne wstecz.
 - **Tagowanie Git:** Każde wydanie produkcyjne musi posiadać tag w formacie `vX.Y.Z` (np. `v1.0.0`).
-- **Dziennik Zmian:** Każde oficjalne wydanie wymaga podsumowania w pliku `CHANGELOG.md` na podstawie commitów.
+- **Standard Keep a Changelog:** Plik `CHANGELOG.md` w root musi stosować ustandaryzowane sekcje: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security` oraz nagłówek `[Unreleased]`.
 
 ## 6. Determinizm Zależności (Strict Lockfile Policy)
 - **Frozen Lockfile w CI:** Wszystkie zadania CI muszą bezwzględnie instalować zależności z flagą zamrażającą plik lock (`pnpm install --frozen-lockfile` lub odpowiednik).

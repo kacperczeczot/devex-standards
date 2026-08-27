@@ -87,3 +87,15 @@ Repozytorium musi pozostawać czyste w każdym commicie:
 - **Archiwizacja dokumentacji:** Nieaktualne pliki dokumentacyjne trafiają do `docs/archive/`.
 - **Archiwizacja danych:** Stare zrzuty danych trafiają do `data/archive/`.
 - **Kod źródłowy:** Kodu źródłowego nie archiwizuje się w folderach — historię zmian przechowuje Git.
+
+## 10. Pragmatyczna Strategia Pokrycia Testami (Pragmatic Coverage Policy)
+W całym ekosystemie obowiązuje zasada: **Nie gonimy ogólnego % pokrycia dla całego repozytorium**. Wymagania dotyczące testów są definiowane **per warstwa architektoniczna**:
+- **Logika domenowa i pakiety współdzielone (`packages/schemas`, `packages/core`, algorytmy gier):** Rygorystyczny próg (rekomendowane **≥ 85%**).
+- **Warstwa serwisów i backendu (`apps/api`, serwery):** Umiarkowany próg (rekomendowane **≥ 75%**).
+- **Powłoki UI i komponenty wizualne (`apps/web`, widoki):** Weryfikowane przez testy integracyjne / E2E (Playwright), a nie sztuczny coverage liniowy.
+
+## 11. Dokumentowanie Kodu w Miejscu (TSDoc & Doxygen)
+Wszystkie publiczne interfejsy, funkcje eksportowane z modułów oraz schematy danych muszą posiadać ustandaryzowaną dokumentację w kodzie:
+- **TypeScript / JavaScript:** Format **TSDoc** ([tsdoc.org](https://tsdoc.org/)) z tagami `@param`, `@returns`, `@throws`, `@example`.
+- **C++ / Rust:** Format **Doxygen** / rustdoc dla kluczowych struktur silnika i nagłówków.
+
