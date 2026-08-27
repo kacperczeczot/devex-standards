@@ -30,6 +30,10 @@ W ekosystemie obowiązują dwa wykluczające się modele struktury kodu:
 - **Model Single-App:** Cały kod aplikacji znajduje się w folderze `src/`. Nie stosuje się folderów `apps/` ani `packages/`.
 - **Model Monorepo:** Cały kod wykonawczy znajduje się w podkatalogach wewnątrz `apps/`, a współdzielone moduły w `packages/`. W korzeniu projektu nie stosuje się folderu `src/`.
 
+### Konwencje Folderów Pomocniczych
+- **Automatyzacja (`scripts/` vs `tools/`):** Domyślnym folderem automatyzacji dla projektów webowych i skryptowych jest `scripts/`. Dla projektów natywnych (C++, Rust) oficjalny standard dopuszcza używanie `tools/` (np. na wewnętrzne kompilatory, narzędzia telemetryczne) jako alternatywy lub uzupełnienia dla `scripts/`.
+- **Zasoby statyczne (`assets/`):** Występują w root w modelu Single-App. W modelu Monorepo nie stosuje się folderu `assets/` w root — zasoby należą do poszczególnych aplikacji lub współdzielonych pakietów UI.
+
 ### Polityka Czystości Katalogu Root
 Katalog główny (`root`) każdego projektu musi bezwzględnie przestrzegać **zamkniętej listy dopuszczalnych folderów** zdefiniowanej w głównym `README.md`. Oprócz tego obowiązuje rygorystyczna polityka dotycząca plików w root:
 
