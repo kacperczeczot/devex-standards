@@ -30,6 +30,12 @@ W ekosystemie obowiązują dwa wykluczające się modele struktury kodu:
 - **Model Single-App:** Cały kod aplikacji znajduje się w folderze `src/`. Nie stosuje się folderów `apps/` ani `packages/`.
 - **Model Monorepo:** Cały kod wykonawczy znajduje się w podkatalogach wewnątrz `apps/`, a współdzielone moduły w `packages/`. W korzeniu projektu nie stosuje się folderu `src/`.
 
+### System Statusów Katalogów w Szablonach
+Szablony prezentują strukturę z kontrolowaną nadwyżką, w której każdy katalog posiada określony status:
+- 🔴 **`[WYMAGANY]`**: Musi istnieć w każdym projekcie danego modelu (np. `src/` w Single-App, `apps/` i `packages/schemas/` w Monorepo, `docs/adr/`, `.agents/`).
+- 🟡 **`[ZALECANY]`**: Powinien istnieć w projektach o umiarkowanej i dużej złożoności (np. `tests/e2e/`, `tests/integration/`, `docs/architecture/`, `packages/config/`).
+- ⚪ **`[OPCJONALNY]`**: Stosowany wyłącznie wtedy, gdy projekt tego realnie wymaga (np. `assets/` dla grafik/audio, `data/` dla SQLite/zrzutów, `docs/api/` dla kontraktów OpenAPI, `packages/ui/` dla design systemu).
+
 ### Konwencje Folderów Pomocniczych
 - **Automatyzacja (`scripts/` vs `tools/`):** Domyślnym folderem automatyzacji dla projektów webowych i skryptowych jest `scripts/`. Dla projektów natywnych (C++, Rust) oficjalny standard dopuszcza używanie `tools/` (np. na wewnętrzne kompilatory, narzędzia telemetryczne) jako alternatywy lub uzupełnienia dla `scripts/`.
 - **Zasoby statyczne (`assets/`):** Występują w root w modelu Single-App. W modelu Monorepo nie stosuje się folderu `assets/` w root — zasoby należą do poszczególnych aplikacji lub współdzielonych pakietów UI.
