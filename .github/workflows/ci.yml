@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    # Przykładowy szkielet uniwersalnego CI
+    # Wymaga uzupełnienia o pnpm, testy i linter w docelowym projekcie.
+    - name: Run Tests
+      run: echo "To be implemented"
