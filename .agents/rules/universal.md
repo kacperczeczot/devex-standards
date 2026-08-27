@@ -20,3 +20,13 @@ Podczas proponowania lub generowania kodu, AI musi bezwzględnie przestrzegać n
 - **Walidacja Danych:** Zawsze używaj biblioteki `zod` do walidacji danych zewnętrznych na wszystkich stykach aplikacji (IPC, API).
 - **Stylowanie:** Zawsze używaj `CSS Modules` w projektach frontendowych. Unikaj stylów globalnych.
 - **Błędy:** Stosuj wzorzec "Result Object" zapobiegający niezłapanym wyjątkom na poziomie domenowym.
+
+## 4. Kanon Dokumentacji i Breadcrumbs dla AI
+Podczas tworzenia lub modyfikacji jakichkolwiek plików `.md` w całym ekosystemie, AI musi bezwzględnie umieszczać na samej górze pliku pasek nawigacyjny:
+```markdown
+[Strona główna](względna_ścieżka/README.md) > [Folder](README.md) > [Nazwa Pliku](plik.md)
+
+---
+```
+- Zakaz pomijania breadcrumbs w jakimkolwiek pliku Markdown.
+- Zawsze format `[Strona główna](...)` (mała litera "główna") z separatorem ` > ` i linią `---`.

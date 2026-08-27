@@ -48,3 +48,23 @@ Katalog główny (`root`) każdego projektu musi bezwzględnie przestrzegać **z
 - **ZAKAZ luźnej dokumentacji:** Dozwolona jest wyłącznie "Złota Trójca" plików w root: `README.md`, `LICENSE` oraz `CHANGELOG.md` (lub `STATUS.md`). Wszelkie inne notatki, plany i ADR-y lądują w `docs/`.
 
 Główny katalog służy **wyłącznie jako tablica rozdzielcza dla ekosystemu i narzędzi**. Dopuszczalne są w nim tylko i wyłącznie manifesty i pliki konfiguracyjne (np. `.gitignore`, `.editorconfig`, `package.json`, `.env`, `CMakeLists.txt`, `tsconfig.json`, `pnpm-workspace.yaml`, `turbo.json`).
+
+## 5. Standard Nawigacji Dokumentacji (Kanon Breadcrumbs)
+
+Każdy plik dokumentacyjny (`.md`) w całym ekosystemie **musi rozpoczynać się od paska nawigacyjnego (breadcrumbs)** oddzielonego poziomą linią od tytułu dokumentu.
+
+### Wzorzec Formatowania
+```markdown
+[Strona główna](względna_ścieżka/README.md) > [Folder Nadrzędny](README.md) > [Bieżący Plik](plik.md)
+
+---
+
+# Tytuł Dokumentu
+```
+
+### Żelazne Reguły Breadcrumbs:
+1. **Nazewnictwo:** Zawsze `[Strona główna](...)` (mała litera „główna”).
+2. **Separator:** Zawsze spacja, znak większości, spacja: ` > `.
+3. **Ścieżki relatywne:** Każdy człon ścieżki musi być aktywnym, klikalnym linkiem względnym prowadzącym do odpowiedniego pliku `README.md` lub nadrzędnego węzła.
+4. **Ostatni element:** Ostatni człon w ścieżce to nazwa bieżącego dokumentu (linkująca do siebie lub reprezentująca aktywny plik).
+5. **Linia oddzielająca:** Pod paskiem nawigacyjnym zawsze musi znajdować się pusta linia, separator `---` oraz kolejna pusta linia przed głównym nagłówkiem `# H1`.
