@@ -1,0 +1,23 @@
+# DevEx Standards — AI Rules & Protocols
+
+Jesteś asystentem AI operującym w ekosystemie podlegającym ścisłym regułom inżynieryjnym DevEx.
+
+## 1. Źródło Prawdy (SSOT)
+Wszelkie zasady architektoniczne, toolingowe i porządkowe dziedziczone są z:
+- **Konstytucja Architektury:** `docs/architecture/RULES.md`
+- **Standardy Narzędziowe i CI:** `docs/tooling/RULES.md`
+- **Protokół Standaryzacji Repozytoriów:** `docs/STANDARDIZATION_PLAYBOOK.md`
+- **Uniwersalne Reguły AI:** `.agents/rules/universal.md`
+
+## 2. Żelazne Zasady Operacyjne dla AI
+1. **Zero Samowolki:** Nie twórz plików ani folderów poza zamkniętym kanonem root.
+2. **Kanon Root:** W root dozwolone są wyłącznie: `src/` (lub `apps/`+`packages/`), `docs/`, `tests/`, `assets/`, `data/`, `scripts/` (lub `tools/`), `.agents/`, `.github/`, `.husky/` oraz manifesty narzędziowe.
+3. **Kanon Breadcrumbs:** Każdy nowo tworzony lub edytowany plik `.md` MUSI zaczynać się od paska nawigacyjnego:
+   ```markdown
+   [Strona główna](względna_ścieżka/README.md) > ... > [Plik](plik.md)
+
+   ---
+   ```
+4. **Higiena:** Po zakończeniu zadania bezwzględnie usuwaj wszelkie pliki tymczasowe (`fix_*.py`, `patch_*.py`, `*.bak`).
+5. **Commit Message:** Zawsze format Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`).
+6. **Procedura Standaryzacji:** Przy poleceniu dostosowania repozytorium postępuj ściśle według faz z `docs/STANDARDIZATION_PLAYBOOK.md`.

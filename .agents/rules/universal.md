@@ -39,3 +39,12 @@ Podczas tworzenia lub modyfikacji jakichkolwiek plików `.md` w całym ekosystem
 ## 6. Konwencja Nazewnictwa i Językowa
 - Wszystkie nowo tworzone katalogi, pliki skryptów i konfiguracje muszą być nazwane w języku angielskim w formacie `kebab-case`.
 - Zabrania się tworzenia folderów takich jak `archiwum/` czy `nowe_pliki/` w root — archiwizacja odbywa się w `docs/archive/` lub `data/archive/`.
+
+## 7. Procedura Standaryzacji Repozytoriów dla AI
+Gdy użytkownik zleca agentowi standaryzację lub migrację repozytorium do standardów DevEx, agent musi bezwzględnie postępować według 5-fazowego protokołu zdefiniowanego w:
+👉 **[Protokół Standaryzacji Repozytoriów (STANDARDIZATION_PLAYBOOK.md)](https://github.com/kacperczeczot/devex-standards/blob/main/docs/STANDARDIZATION_PLAYBOOK.md)**
+- Faza 1: Audyt i klasyfikacja (Single-App vs Monorepo).
+- Faza 2: Usunięcie śmieci (`*.bak`, `patch_*.py`) i zabezpieczenie sekretów.
+- Faza 3: Reorganizacja katalogów do Kanonu Root.
+- Faza 4: Naprawa importów i weryfikacja kompilacji/testów.
+- Faza 5: Wdrożenie `docs/STANDARDS.md`, Breadcrumbs i szablonu PR.

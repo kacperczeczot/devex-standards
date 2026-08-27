@@ -49,6 +49,7 @@ Katalog główny (`root`) każdego projektu podlega rygorystycznemu ograniczeniu
 | [Baza Dokumentacji (`docs/README.md`)](docs/README.md) | Centralny hub dokumentacyjny standardów |
 | [Architektura (`docs/architecture/RULES.md`)](docs/architecture/RULES.md) | Zod, Result Object, CSS Modules, czystość root |
 | [Narzędzia i CI (`docs/tooling/RULES.md`)](docs/tooling/RULES.md) | Stack narzędziowy (pnpm, Husky, CI, SemVer) |
+| [Playbook Standaryzacji dla AI (`docs/STANDARDIZATION_PLAYBOOK.md`)](docs/STANDARDIZATION_PLAYBOOK.md) | Protokół migracji i reorganizacji repozytoriów dla modeli AI |
 | [Rejestr Decyzji ADR (`docs/adr/`)](docs/adr/README.md) | Format i zasady rejestrowania decyzji architektonicznych |
 | [Reguły AI (`.agents/rules/universal.md`)](.agents/rules/universal.md) | Zasady Zero Samowolki i neutralności domenowej |
 
