@@ -23,18 +23,18 @@ W ekosystemie obowiązują dokładnie **dwa deterministyczne modele projektowe**
 
 Katalog główny (`root`) każdego projektu podlega rygorystycznemu ograniczeniu. Dozwolone są wyłącznie foldery z poniższego zamkniętego słownika:
 
-```text
-├── src/           # [Tylko Single-App] Kod źródłowy aplikacji
-├── apps/          # [Tylko Monorepo] Aplikacje i moduły wykonawcze
-├── packages/      # [Tylko Monorepo] Współdzielone paczki i biblioteki
-├── docs/          # Dokumentacja projektowa, GDD, ADR-y
-├── assets/        # Zasoby statyczne (grafiki, audio, modele, pliki PnP)
-├── data/          # Lokalne bazy SQLite, zrzuty JSON, dane deweloperskie
-├── scripts/       # Lekka automatyzacja (Node.js, bash) dla projektów webowych/hybrydowych
-├── tools/         # Ciężkie narzędzia, kompilatory, symulatory (C++, Rust)
-├── tests/         # Globalne testy integracyjne i E2E
-└── .agents/       # Reguły i instrukcje dla systemów AI
-```
+| Katalog | Model / Zastosowanie | Opis |
+| :--- | :--- | :--- |
+| [src/](docs/architecture/RULES.md#4-modele-projektowe-i-czystość-katalogu-głównego-root) | Single-App | Główny kod źródłowy aplikacji |
+| [apps/](docs/architecture/RULES.md#4-modele-projektowe-i-czystość-katalogu-głównego-root) | Monorepo | Aplikacje i moduły wykonawcze |
+| [packages/](docs/architecture/RULES.md#4-modele-projektowe-i-czystość-katalogu-głównego-root) | Monorepo | Współdzielone paczki i biblioteki |
+| [docs/](docs/README.md) | Uniwersalny | Dokumentacja projektowa, GDD, ADR-y |
+| [assets/](docs/architecture/RULES.md#konwencje-folderów-pomocniczych) | Single-App | Zasoby statyczne (grafiki, audio, modele, pliki PnP) |
+| [data/](docs/architecture/RULES.md#polityka-czystości-katalogu-root) | Uniwersalny | Lokalne bazy SQLite, zrzuty JSON, dane deweloperskie |
+| [scripts/](docs/architecture/RULES.md#konwencje-folderów-pomocniczych) | Uniwersalny | Lekka automatyzacja (Node.js, bash) |
+| [tools/](docs/architecture/RULES.md#konwencje-folderów-pomocniczych) | C++ / Rust | Ciężkie narzędzia, kompilatory, symulatory |
+| [tests/](docs/architecture/RULES.md#4-modele-projektowe-i-czystość-katalogu-głównego-root) | Uniwersalny | Globalne testy integracyjne i E2E |
+| [.agents/](.agents/rules/universal.md) | Uniwersalny | Reguły i instrukcje dla systemów AI |
 
 > [!CAUTION]
 > **Bezwzględny Zakaz Samowolki Folderowej**
